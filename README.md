@@ -17,25 +17,15 @@
 | SpringBoot           | Web应用开发框架       | https://spring.io/projects/spring-boot         |
 | SpringSecurity       | 认证和授权框架        | https://spring.io/projects/spring-security     |
 | MyBatis              | ORM框架               | http://www.mybatis.org/mybatis-3/zh/index.html |
-| MyBatisGenerator     | 数据层代码生成器      | http://www.mybatis.org/generator/index.html    |
 | Elasticsearch        | 搜索引擎              | https://github.com/elastic/elasticsearch       |
 | RabbitMQ             | 消息队列              | https://www.rabbitmq.com/                      |
 | Redis                | 内存数据存储          | https://redis.io/                              |
 | MongoDB              | NoSql数据库           | https://www.mongodb.com                        |
-| LogStash             | 日志收集工具          | https://github.com/elastic/logstash            |
-| Kibana               | 日志可视化查看工具    | https://github.com/elastic/kibana              |
 | Nginx                | 静态资源服务器        | https://www.nginx.com/                         |
 | Docker               | 应用容器引擎          | https://www.docker.com                         |
-| Jenkins              | 自动化部署工具        | https://github.com/jenkinsci/jenkins           |
-| Druid                | 数据库连接池          | https://github.com/alibaba/druid               |
 | OSS                  | 对象存储              | https://github.com/aliyun/aliyun-oss-java-sdk  |
-| MinIO                | 对象存储              | https://github.com/minio/minio                 |
 | JWT                  | JWT登录支持           | https://github.com/jwtk/jjwt                   |
 | Lombok               | Java语言增强库        | https://github.com/rzwitserloot/lombok         |
-| Hutool               | Java工具类库          | https://github.com/looly/hutool                |
-| PageHelper           | MyBatis物理分页插件   | http://git.oschina.net/free/Mybatis_PageHelper |
-| Swagger-UI           | API文档生成工具       | https://github.com/swagger-api/swagger-ui      |
-| Hibernator-Validator | 验证框架              | http://hibernate.org/validator                 |
 
 ### 2.2 前端技术
 | 技术         | 说明                | 官网                                   |
@@ -45,18 +35,7 @@
 | Vuex         | 全局状态管理框架    | https://vuex.vuejs.org/                |
 | Element      | 前端UI框架          | https://element.eleme.io               |
 | Axios        | 前端HTTP框架        | https://github.com/axios/axios         |
-| v-charts     | 基于Echarts的图表框架| https://v-charts.js.org/               |
 | Js-cookie    | cookie管理工具      | https://github.com/js-cookie/js-cookie |
-| nprogress    | 进度条控件          | https://github.com/rstacruz/nprogress  |
-
-### 2.3 移动端技术
-| 技术         | 说明                | 官网                                   |
-|--------------|---------------------|----------------------------------------|
-| Vue          | 核心前端框架        | https://vuejs.org                      |
-| Vuex         | 全局状态管理框架    | https://vuex.vuejs.org                 |
-| uni-app      | 移动端前端框架      | https://uniapp.dcloud.io               |
-| mix-mall     | 电商项目模板        | https://ext.dcloud.net.cn/plugin?id=200|
-| luch-request | HTTP请求框架        | https://github.com/lei-mu/luch-request |
 
 
 ## 三、核心功能特点
@@ -103,3 +82,4 @@
 未来我们将重点突破三大技术方向：开发新一代智能体协同框架，构建行业领先的RAG增强系统，完善边缘计算支持。同时计划打造"智能体应用矩阵"，重点突破金融法律垂直领域Agent开发、跨平台办公中枢建设和智能体可视化编排系统研发，预计可覆盖80%以上的日常办公场景，成为真正的"数字员工"。
 
 本智能办公系统不仅是一款软件产品，更是企业数字化转型的重要助手，通过人工智能技术赋能企业办公全流程，为企业降本增效和创新发展提供坚实的技术支撑。
+
