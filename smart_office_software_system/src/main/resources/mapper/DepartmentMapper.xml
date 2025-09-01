@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.smart_office_software_system.mapper.DepartmentMapper">
+
+    <!-- 1. 嵌套结果映射 -->
+    <resultMap id="DepartmentWithUsersMap" type="com.example.smart_office_software_system.dto.DepartmentDTO">
+        <id column="dept_id" property="id"/>
+        <result column="dept_name" property="deptName"/>
+        <result column="dept_intro" property="deptIntro"/>
+        <result column="leader_id" property="leaderId"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+        <result column="leader" property="leader"/>
+
+        <collection property="userList" ofType="com.example.smart_office_software_system.domain.User">
+            <id column="user_id" property="id"/>
+            <result column="user_account" property="account"/>
+            <result column="email" property="email"/>
+        </collection>
+    </resultMap>
+
+
+
+
+    <!-- 插入关联表 -->
+    <insert id="insertDeptUser" parameterType="map">
+        INSERT INTO department_user (dept_id, user_id)
+        VALUES (#{deptId}, #{userId})
+    </insert>
+
+    <update id="updateDepartment" parameterType="com.example.smart_office_software_system.domain.Department">
+        update department
+        <set>
+            <if test="deptName != null and deptName != ''">
+                dept_name=#{deptName},
+            </if>
+            <if test="deptIntro != null and deptIntro != ''">
+                dept_intro=#{deptIntro},
+            </if>
+            <if test="leaderId != null and leaderId != ''">
+                leader_id=#{leaderId},
+            </if>
+            updated_at=now()
+        </set>
+        where id=#{id}
+    </update>
+
+
+    <select id="getDepartmentListByUserId" resultType="com.example.smart_office_software_system.dto.DepartmentDTO">
+        SELECT
+            d.*,
+            u.account AS leader
+        FROM
+            department d
+                LEFT JOIN
+            user u ON d.leader_id = u.id
+    </select>
+
+
+    <select id="getDepartmentById" resultMap="DepartmentWithUsersMap">
+        SELECT
+            d.id AS dept_id,
+            d.dept_name,
+            d.dept_intro,
+            d.leader_id,
+            d.created_at,
+            d.updated_at,
+            u1.account AS leader,
+
+            u2.id AS user_id,
+            u2.account AS user_account,
+            u2.email as email
+        FROM department d
+                 LEFT JOIN user u1 ON d.leader_id = u1.id               -- leader信息
+                 LEFT JOIN department_user du ON d.id = du.dept_id
+                 LEFT JOIN user u2 ON du.user_id = u2.id                -- 部门成员列表
+        WHERE d.id = #{id}
+    </select>
+
+
+
+</mapper>

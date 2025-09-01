@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.smart_office_software_system.mapper.UserMapper">
+    <!-- 插入 user：单条语句 + 回填主键 -->
+    <insert id="insertUser" parameterType="com.example.smart_office_software_system.domain.User"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (account, password, email, role, salt)
+        VALUES (#{user.account}, #{user.password}, #{user.email}, #{user.role}, #{user.salt})
+    </insert>
+    <delete id="delete">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="findByUsername" parameterType="String" resultType="com.example.smart_office_software_system.domain.User">
+        SELECT id, account, password,email,role, salt
+        FROM user
+        WHERE account = #{account}
+    </select>
+    <select id="getUserById" resultType="java.lang.Integer">
+        select * from user where id = #{id}
+    </select>
+
+    <!-- parameterType 写 map，因为用了多个 @Param -->
+    <update id="update">
+        UPDATE user
+        <set>
+            <if test="user.password != null and user.password != ''">
+                password = #{user.password},
+            </if>
+            <if test="user.account != null and user.account != ''">
+                account = #{user.account},
+            </if>
+            <if test="user.email != null and user.email != ''">
+                email = #{user.email},
+            </if>
+            <if test="user.salt != null and user.salt != ''">
+                salt = #{user.salt},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+
+</mapper>

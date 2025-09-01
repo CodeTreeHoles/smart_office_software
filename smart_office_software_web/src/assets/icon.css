@@ -1,0 +1,65 @@
+/* 图标样式 */
+.fas {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* 消息图标 */
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+/* 文件夹图标 */
+.fa-folder:before {
+  content: "\f07b"; 
+}
+
+/* 用户组图标 */
+.fa-users:before {
+  content: "\f0c0";
+}
+
+/* 铃铛图标 */
+.fa-bell:before {
+  content: "\f0f3";
+}
+
+/* 月亮图标 */
+.fa-moon:before {
+  content: "\f186";
+}
+
+/* 用户头像图标 */
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+
+/* 聊天图标 */
+.fa-comments:before {
+  content: "\f086";
+}
+
+/* 书本图标 */
+.fa-book:before {
+  content: "\f02d";
+}
+
+/* 趋势图标 */
+.fa-chart-line:before {
+  content: "\f201";
+}
+
+/* 收件箱图标 */
+.fa-inbox:before {
+  content: "\f01c";
+}
+
+/* 用户设置图标 */
+.fa-users-cog:before {
+  content: "\f509";
+}

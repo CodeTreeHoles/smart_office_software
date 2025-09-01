@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.smart_office_software_system.mapper.FileMapper">
+
+    <insert id="insertFile" parameterType="com.example.smart_office_software_system.domain.File">
+        INSERT INTO file (
+            file_name, file_type, user_id, scope,
+            created_at, updated_at, file_path, file_size, `desc`, team_id
+        ) VALUES (
+                     #{fileName}, #{fileType}, #{userId}, #{scope},
+                     NOW(), NOW(), #{filePath}, #{fileSize}, #{desc}, #{teamId}
+                 )
+    </insert>
+
+
+    <select id="getFilesByUserId" parameterType="Integer" resultType="com.example.smart_office_software_system.domain.File">
+            select * from file where user_id = #{userId}
+    </select>
+    <delete id="deleteFileById" parameterType="Integer">
+        DELETE FROM file WHERE id = #{fileId}
+    </delete>
+    <select id="getFileById" parameterType="Integer" resultType="com.example.smart_office_software_system.domain.File">
+        SELECT * FROM file WHERE id = #{fileId}
+    </select>
+</mapper>

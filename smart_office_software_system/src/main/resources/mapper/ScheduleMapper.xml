@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.smart_office_software_system.mapper.ScheduleMapper">
+
+    <update id="updateSchedule" parameterType="com.example.smart_office_software_system.domain.Schedule">
+        UPDATE schedule
+        <set>
+            <if test="eventName != null">event_name = #{eventName},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+</mapper>
