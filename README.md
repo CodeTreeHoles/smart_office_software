@@ -1,36 +1,89 @@
 # 智能办公应用系统
 
+## 项目演示地址
+[https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
+
+
 ## 一、项目概述
 在数字化转型加速的时代背景下，企业办公环境正面临前所未有的效率挑战。传统办公模式在文档处理、信息管理和日程协调等方面已显露出明显不足。针对这些问题，我们研发了一套创新的智能办公系统，通过整合前沿人工智能技术，为企业提供全方位的智能化办公解决方案。
 
 本系统采用RAG技术实现精准文档检索，运用Agent技术实现常规办公事务自动化，并构建了智能日程管理系统来优化时间安排。同时，我们还建立了企业级知识图谱，显著提升了团队协作效率。该系统具有显著的实用价值，能够有效降低人工操作时间，提升决策质量，优化资源配置，其模块化设计架构可以灵活适应不同规模企业的办公需求。
 
 
-## 二、核心功能特点
-### 2.1 智能化文档管理
+## 二、技术选型
+### 2.1 后端技术
+| 技术                 | 说明                  | 官网                                           |
+| -------------------- | --------------------- | ---------------------------------------------- |
+| SpringBoot           | Web应用开发框架       | https://spring.io/projects/spring-boot         |
+| SpringSecurity       | 认证和授权框架        | https://spring.io/projects/spring-security     |
+| MyBatis              | ORM框架               | http://www.mybatis.org/mybatis-3/zh/index.html |
+| MyBatisGenerator     | 数据层代码生成器      | http://www.mybatis.org/generator/index.html    |
+| Elasticsearch        | 搜索引擎              | https://github.com/elastic/elasticsearch       |
+| RabbitMQ             | 消息队列              | https://www.rabbitmq.com/                      |
+| Redis                | 内存数据存储          | https://redis.io/                              |
+| MongoDB              | NoSql数据库           | https://www.mongodb.com                        |
+| LogStash             | 日志收集工具          | https://github.com/elastic/logstash            |
+| Kibana               | 日志可视化查看工具    | https://github.com/elastic/kibana              |
+| Nginx                | 静态资源服务器        | https://www.nginx.com/                         |
+| Docker               | 应用容器引擎          | https://www.docker.com                         |
+| Jenkins              | 自动化部署工具        | https://github.com/jenkinsci/jenkins           |
+| Druid                | 数据库连接池          | https://github.com/alibaba/druid               |
+| OSS                  | 对象存储              | https://github.com/aliyun/aliyun-oss-java-sdk  |
+| MinIO                | 对象存储              | https://github.com/minio/minio                 |
+| JWT                  | JWT登录支持           | https://github.com/jwtk/jjwt                   |
+| Lombok               | Java语言增强库        | https://github.com/rzwitserloot/lombok         |
+| Hutool               | Java工具类库          | https://github.com/looly/hutool                |
+| PageHelper           | MyBatis物理分页插件   | http://git.oschina.net/free/Mybatis_PageHelper |
+| Swagger-UI           | API文档生成工具       | https://github.com/swagger-api/swagger-ui      |
+| Hibernator-Validator | 验证框架              | http://hibernate.org/validator                 |
+
+### 2.2 前端技术
+| 技术         | 说明                | 官网                                   |
+|--------------|---------------------|----------------------------------------|
+| Vue          | 前端框架            | https://vuejs.org/                     |
+| Vue-router   | 路由框架            | https://router.vuejs.org/              |
+| Vuex         | 全局状态管理框架    | https://vuex.vuejs.org/                |
+| Element      | 前端UI框架          | https://element.eleme.io               |
+| Axios        | 前端HTTP框架        | https://github.com/axios/axios         |
+| v-charts     | 基于Echarts的图表框架| https://v-charts.js.org/               |
+| Js-cookie    | cookie管理工具      | https://github.com/js-cookie/js-cookie |
+| nprogress    | 进度条控件          | https://github.com/rstacruz/nprogress  |
+
+### 2.3 移动端技术
+| 技术         | 说明                | 官网                                   |
+|--------------|---------------------|----------------------------------------|
+| Vue          | 核心前端框架        | https://vuejs.org                      |
+| Vuex         | 全局状态管理框架    | https://vuex.vuejs.org                 |
+| uni-app      | 移动端前端框架      | https://uniapp.dcloud.io               |
+| mix-mall     | 电商项目模板        | https://ext.dcloud.net.cn/plugin?id=200|
+| luch-request | HTTP请求框架        | https://github.com/lei-mu/luch-request |
+
+
+## 三、核心功能特点
+### 3.1 智能化文档管理
 系统提供智能文档处理功能，支持语义搜索的文档检索，能够自动生成标准格式的办公文档，并提供智能化的文档校对和内容优化功能。通过先进的文档解析技术，系统支持多类型文件上传和下载，提供实时在线预览功能，并具备完善的版本管理和权限控制体系。
 
-### 2.2 智能日程管理
+### 3.2 智能日程管理
 系统采用智能化的日程管理方案，支持用户通过自然语言交互完成日程创建、编辑和管理操作。基于RabbitMQ消息队列实现智能助手与后端服务的通信，确保功能调用的可靠性和实时性。系统提供智能提醒服务，能够自动检测和提醒日程冲突，大大提升了日程管理的智能化水平。
 
-### 2.3 智能助手系统
+### 3.3 智能助手系统
 基于LangChain框架构建的智能助手系统，采用Agent技术实现核心的智能问答功能。系统集成了多种实用工具链，包括文档处理工具、智能日程管理工具和企业知识检索工具。通过RAG技术，系统能够智能解析各类办公文档，实现精准的知识检索与问答，提供专业、准确的办公场景解决方案。
 
-### 2.4 知识库管理体系
+### 3.4 知识库管理体系
 系统采用分级管理的知识库架构，以部门为基本管理单元，同时建立企业级公共知识库，促进跨部门协作。通过基于向量数据库的智能检索体系，支持自然语言查询和语义相似度检索，结合细粒度的权限管理系统，确保员工快速获取相关知识内容。
 
 
-## 三、技术架构创新
-### 3.1 系统架构设计
+## 四、技术架构创新
+### 4.1 系统架构设计
 本系统采用B/S架构，前端使用Vue3框架，后端采用SpringBoot和Flask双框架结构。数据库采用MySQL，缓存技术选择Redis，消息队列服务选用RabbitMQ。这种架构设计确保了系统的稳定性、可扩展性和高性能。
 
-### 3.2 智能技术集成
+### 4.2 智能技术集成
 系统集成了多项前沿AI技术：
 - **RAG技术**：结合外部知识检索与大语言模型生成能力，通过实时检索相关文档片段增强回答准确性
 - **Agent技术**：基于自主决策框架的任务自动化系统，支持工具调用、多步骤推理及动态规划
 - **向量数据库技术**：使用Chroma/FAISS等高性能向量数据库，实现文档嵌入向量的高效存储与检索
 
-### 3.3 四层协同架构
+### 4.3 四层协同架构
 系统设计了四层协同的智能处理引擎：
 1. **交互层**：支持多模态输入的自然语言界面
 2. **认知层**：基于大模型的意图识别与任务规划中枢
@@ -38,15 +91,15 @@
 4. **知识层**：整合结构化数据与非结构化文档的统一知识库
 
 
-## 四、安全与性能保障
+## 五、安全与性能保障
 系统在安全方面采用多重保障措施，包括MD5加密技术保护用户敏感数据，精细化权限管理机制，接口访问权限控制，以及请求数据合法性校验。系统具备高性能响应能力，支持大规模用户同时在线操作，确保业务连续性和稳定性。
 
 
-## 五、应用价值与成果
+## 六、应用价值与成果
 本系统已实现90%以上的检索准确率，通过"部门-企业"双级知识库架构，既保障了部门知识安全，又促进了跨部门协作。系统创新性地开发了自然语言驱动的数据分析功能和智能冲突检测算法，大幅提升了办公效率。
 
 
-## 六、未来发展展望
+## 七、未来发展展望
 未来我们将重点突破三大技术方向：开发新一代智能体协同框架，构建行业领先的RAG增强系统，完善边缘计算支持。同时计划打造"智能体应用矩阵"，重点突破金融法律垂直领域Agent开发、跨平台办公中枢建设和智能体可视化编排系统研发，预计可覆盖80%以上的日常办公场景，成为真正的"数字员工"。
 
 本智能办公系统不仅是一款软件产品，更是企业数字化转型的重要助手，通过人工智能技术赋能企业办公全流程，为企业降本增效和创新发展提供坚实的技术支撑。
