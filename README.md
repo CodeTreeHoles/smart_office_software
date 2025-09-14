@@ -16,10 +16,8 @@ https://www.bilibili.com/video/BV1SJaEzPE9d?vd_source=7b84c4476d89d33532b2008fef
 | SpringBoot           | Web应用开发框架       | https://spring.io/projects/spring-boot         |
 | SpringSecurity       | 认证和授权框架        | https://spring.io/projects/spring-security     |
 | MyBatis              | ORM框架               | http://www.mybatis.org/mybatis-3/zh/index.html |
-| Elasticsearch        | 搜索引擎              | https://github.com/elastic/elasticsearch       |
 | RabbitMQ             | 消息队列              | https://www.rabbitmq.com/                      |
 | Redis                | 内存数据存储          | https://redis.io/                              |
-| MongoDB              | NoSql数据库           | https://www.mongodb.com                        |
 | Nginx                | 静态资源服务器        | https://www.nginx.com/                         |
 | Docker               | 应用容器引擎          | https://www.docker.com                         |
 | OSS                  | 对象存储              | https://github.com/aliyun/aliyun-oss-java-sdk  |
@@ -81,5 +79,6 @@ https://www.bilibili.com/video/BV1SJaEzPE9d?vd_source=7b84c4476d89d33532b2008fef
 未来我们将重点突破三大技术方向：开发新一代智能体协同框架，构建行业领先的RAG增强系统，完善边缘计算支持。同时计划打造"智能体应用矩阵"，重点突破金融法律垂直领域Agent开发、跨平台办公中枢建设和智能体可视化编排系统研发，预计可覆盖80%以上的日常办公场景，成为真正的"数字员工"。
 
 本智能办公系统不仅是一款软件产品，更是企业数字化转型的重要助手，通过人工智能技术赋能企业办公全流程，为企业降本增效和创新发展提供坚实的技术支撑。
+
 
 
